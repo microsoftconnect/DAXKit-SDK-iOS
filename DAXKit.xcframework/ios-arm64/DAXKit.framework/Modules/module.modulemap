@@ -1,0 +1,11 @@
+framework module DAXKit {
+  umbrella header "DAXKit.h"
+
+  export *
+  module * { export * }
+}
+
+module DAXKit.Swift {
+  header "DAXKit-Swift.h"
+  requires objc
+}

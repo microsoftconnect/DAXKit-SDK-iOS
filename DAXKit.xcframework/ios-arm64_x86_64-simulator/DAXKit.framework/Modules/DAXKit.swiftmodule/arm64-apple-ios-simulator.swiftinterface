@@ -1,0 +1,220 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
+// swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name DAXKit
+import Combine
+import CoreData
+import Foundation
+import Foundation/*.Bundle*/
+import Foundation/*.ProcessInfo*/
+import Foundation/*.URL*/
+import Network
+import Swift
+import SwiftUI
+import UIKit
+import _Concurrency
+import _StringProcessing
+public enum AccessTokenProviderError : Swift.Error {
+  case authenticationFailed
+  @available(*, deprecated, renamed: "authenticationFailed", message: "No longer supported, please use authenticationFailed")
+  case refreshFailed
+  public static func == (a: DAXKit.AccessTokenProviderError, b: DAXKit.AccessTokenProviderError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@objc public protocol AccessTokenProvider {
+  @objc func accessToken(onSuccess: @escaping (Swift.String) -> Swift.Void, onFailure: @escaping (Swift.Error) -> Swift.Void)
+}
+@objc public protocol AppMetadataProvider {
+  @objc var appID: Swift.String { get }
+  @objc var appVersion: Swift.String { get }
+  @objc var deviceID: Swift.String { get }
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class DAXSession : ObjectiveC.NSObject {
+  @objc final public let identifier: Swift.String
+  @objc public func startRecording(delegate: DAXKit.RecordingDelegate, locales: [Foundation.Locale] = [], autoNoteGeneration: Swift.Bool = true) throws -> DAXKit.Recorder
+  @objc public func complete() throws
+  @objc deinit
+}
+@objc public protocol RecordingDelegate {
+  @objc func didStartRecording(recordingIdentifier: Swift.String, sessionIdentifier: Swift.String, audioInputDevice: DAXKit.AudioInputDevice)
+  @objc func didFailToStartRecording(sessionIdentifier: Swift.String, error: Swift.Error)
+  @objc func didStopRecording(recordingIdentifier: Swift.String, sessionIdentifier: Swift.String, recordingDuration: Foundation.TimeInterval)
+  @objc func recordingInterrupted(reason: DAXKit.RecordingInterruptionReason)
+  @objc func reachedWarnDuration(timeLeft: Foundation.TimeInterval)
+  @objc func recordedAudio(withDuration duration: Foundation.TimeInterval, audioLevel level: Swift.Float)
+}
+@objc public enum RecordingInterruptionReason : Swift.Int {
+  case audioInterruption
+  case systemError
+  case reachedMaxDuration
+  case incompatibleInputDevice
+  case audioRouteChanged
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum AudioInputDeviceType : Swift.Int {
+  case builtInMic
+  case other
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public class AudioInputDevice : ObjectiveC.NSObject {
+  final public let type: DAXKit.AudioInputDeviceType
+  final public let name: Swift.String
+  @objc public init(type: DAXKit.AudioInputDeviceType, name: Swift.String)
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class Recorder : ObjectiveC.NSObject {
+  @objc public func stop() throws
+  @objc deinit
+}
+extension Swift.Optional {
+  public func require(hint hintExpression: @autoclosure () -> Swift.String? = nil, file: Swift.StaticString = #file, line: Swift.UInt = #line) -> Wrapped
+}
+public struct DAXKitError : Foundation.LocalizedError {
+  public enum Code {
+    case internalError
+    case invalidConfiguration
+    public static func == (a: DAXKit.DAXKitError.Code, b: DAXKit.DAXKitError.Code) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public let code: DAXKit.DAXKitError.Code
+  public let description: Swift.String
+}
+@objc public protocol DAXKitDelegate {
+  @objc func uploadedRecording(recordingIdentifier: Swift.String, sessionIdentifier: Swift.String)
+  @objc func uploadFailed(recordingIdentifier: Swift.String, sessionIdentifier: Swift.String, error: Swift.Error, willRetryUpload: Swift.Bool)
+  @objc func recordingPermission(granted: Swift.Bool)
+  @objc func didStartUpload(recordingIdentifier: Swift.String, sessionIdentifier: Swift.String)
+  @objc func didFinishAllUploads()
+  @objc func didCompleteSession(identifier: Swift.String)
+  @objc func didFailToCompleteSession(identifier: Swift.String, withError error: Swift.Error)
+  @objc func didReceiveSupportedLanguages(recordingLocales: [Foundation.Locale], reportLocales: [Foundation.Locale])
+}
+extension DAXKit.DAXKitDelegate {
+  public func didCompleteSession(identifier: Swift.String)
+  public func didFailToCompleteSession(identifier: Swift.String, withError error: Swift.Error)
+  public func didReceiveSupportedLanguages(recordingLocales: [Foundation.Locale], reportLocales: [Foundation.Locale])
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class DAX : ObjectiveC.NSObject {
+  @_inheritsConvenienceInitializers @objc(DAXConfigurationKeys) public class ConfigurationKeys : ObjectiveC.NSObject {
+    @_inheritsConvenienceInitializers @objc(DAXConfigurationKeysProvider) public class Provider : ObjectiveC.NSObject {
+      @objc public static let userId: Swift.String
+      @objc public static let email: Swift.String
+      @objc public static let emrId: Swift.String
+      @objc public static let name: Swift.String
+      @objc public static let orgId: Swift.String
+      @objc public static let productId: Swift.String
+      @objc public static let geography: Swift.String
+      @objc override dynamic public init()
+      @objc deinit
+    }
+    @_inheritsConvenienceInitializers @objc(DAXConfigurationKeysServer) public class ServerEnvironment : ObjectiveC.NSObject {
+      @objc public static let environment: Swift.String
+      @objc override dynamic public init()
+      @objc deinit
+    }
+    @objc override dynamic public init()
+    @objc deinit
+  }
+  @objc public static var shared: DAXKit.DAX {
+    @objc get
+  }
+  @objc public static func start(withAppMetadataProvider appMetadataProvider: DAXKit.AppMetadataProvider, accessTokenProvider: DAXKit.AccessTokenProvider, delegate: DAXKit.DAXKitDelegate, partnerId: Swift.String) throws
+  @objc public func session(withIdentifier identifier: Swift.String, ehrData: DAXKit.EHRData?, workflow: DAXKit.WorkflowSettings = WorkflowSettings(), reportLocale: Foundation.Locale? = nil, uxLocale: Foundation.Locale? = nil) -> DAXKit.DAXSession
+  @objc public func configure(_ configuration: [Swift.String : Any]) throws
+  @objc public func disableLogging()
+  @objc public func prepareToRecord() throws
+  @objc public func resumeUploads() throws
+  @objc public func pauseUploads()
+  @objc public func clearData()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objcMembers public class ServerEnvironments {
+  @objc public static let production: Swift.String
+  @objc public static let staging: Swift.String
+  @objc public static let qa: Swift.String
+  @objc deinit
+}
+@objc public class EHRData : ObjectiveC.NSObject {
+  @objc final public let appointmentId: Swift.String?
+  @objc final public let encounterId: Swift.String?
+  @objc final public let mrn: Swift.String?
+  @objc final public let patient: DAXKit.Patient?
+  @objc final public let reasonForVisit: Swift.String?
+  @objc public init(appointmentId: Swift.String?, encounterId: Swift.String?, mrn: Swift.String?, patient: DAXKit.Patient?, reasonForVisit: Swift.String?)
+  @objc deinit
+}
+@objc public class Patient : ObjectiveC.NSObject {
+  @objc final public let id: Swift.String?
+  @objc final public let firstName: Swift.String?
+  @objc final public let middleName: Swift.String?
+  @objc final public let lastName: Swift.String?
+  @objc final public let dateOfBirth: Foundation.Date?
+  @objc final public let gender: DAXKit.AdministrativeGender
+  @objc public init(id: Swift.String?, firstName: Swift.String?, middleName: Swift.String?, lastName: Swift.String?, dateOfBirth: Foundation.Date?, gender: DAXKit.AdministrativeGender)
+  @objc deinit
+}
+@objc public enum AdministrativeGender : Swift.Int {
+  case unspecified
+  case male
+  case female
+  case other
+  case unknown
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension DAXKit.AdministrativeGender : Swift.CaseIterable {
+  public typealias AllCases = [DAXKit.AdministrativeGender]
+  public static var allCases: [DAXKit.AdministrativeGender] {
+    get
+  }
+}
+extension Foundation.FileManager {
+  public func encryptedRecordingFileURL(forRecordingId recordingId: Swift.String) -> Foundation.URL
+  public func daxDirectory() -> Foundation.URL
+  public func recordingDirectory() -> Foundation.URL
+  public func logsDirectory() -> Foundation.URL
+  public func createDAXDirectories() throws
+}
+@objc public class WorkflowSettings : ObjectiveC.NSObject {
+  @objc final public let deliverOnceOnSessionComplete: Swift.Bool
+  @objc public init(deliverOnceOnSessionComplete: Swift.Bool = false)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(DAXVersion) public class Version : ObjectiveC.NSObject {
+  @objc public static let major: Swift.Int
+  @objc public static let minor: Swift.Int
+  @objc public static let patch: Swift.Int
+  @objc public static let label: Swift.String?
+  @objc public static let versionString: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension DAXKit.AccessTokenProviderError : Swift.Equatable {}
+extension DAXKit.AccessTokenProviderError : Swift.Hashable {}
+extension DAXKit.RecordingInterruptionReason : Swift.Equatable {}
+extension DAXKit.RecordingInterruptionReason : Swift.Hashable {}
+extension DAXKit.RecordingInterruptionReason : Swift.RawRepresentable {}
+extension DAXKit.AudioInputDeviceType : Swift.Equatable {}
+extension DAXKit.AudioInputDeviceType : Swift.Hashable {}
+extension DAXKit.AudioInputDeviceType : Swift.RawRepresentable {}
+extension DAXKit.DAXKitError.Code : Swift.Equatable {}
+extension DAXKit.DAXKitError.Code : Swift.Hashable {}
+extension DAXKit.AdministrativeGender : Swift.Equatable {}
+extension DAXKit.AdministrativeGender : Swift.Hashable {}
+extension DAXKit.AdministrativeGender : Swift.RawRepresentable {}
