@@ -1,0 +1,441 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7549B14A2DC40D450068631E /* DAXKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7549B1492DC40D450068631E /* DAXKit.xcframework */; };
+		7549B14B2DC40D450068631E /* DAXKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7549B1492DC40D450068631E /* DAXKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DFFBC0162BF6861200304233 /* Example-RecordingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFBC0152BF6861200304233 /* Example-RecordingApp.swift */; };
+		DFFBC0182BF6861200304233 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFBC0172BF6861200304233 /* ContentView.swift */; };
+		DFFBC01A2BF6861300304233 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFFBC0192BF6861300304233 /* Assets.xcassets */; };
+		DFFBC01E2BF6861300304233 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFFBC01D2BF6861300304233 /* Preview Assets.xcassets */; };
+		DFFBC02A2BF68AE200304233 /* AccessTokenProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFBC0292BF68AE200304233 /* AccessTokenProvider.swift */; };
+		DFFBC02C2BF68DEC00304233 /* AppMetadataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFBC02B2BF68DEC00304233 /* AppMetadataProvider.swift */; };
+		DFFBC02F2BF6991000304233 /* JWTDecode in Frameworks */ = {isa = PBXBuildFile; productRef = DFFBC02E2BF6991000304233 /* JWTDecode */; };
+		DFFBC0312BF7A57200304233 /* RecordingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFBC0302BF7A57200304233 /* RecordingViewModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7549B14C2DC40D450068631E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7549B14B2DC40D450068631E /* DAXKit.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		7549B1462DC400920068631E /* DAXKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = DAXKit.xcframework; sourceTree = "<group>"; };
+		7549B1492DC40D450068631E /* DAXKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = DAXKit.xcframework; path = ../DAXKit.xcframework; sourceTree = "<group>"; };
+		DFB487C82C090FF1002804AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		DFE4929C2C5002F40091E814 /* daxkit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = daxkit; path = ../../daxkit; sourceTree = "<group>"; };
+		DFFBC0122BF6861200304233 /* Example-Recording.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Example-Recording.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFFBC0152BF6861200304233 /* Example-RecordingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Example-RecordingApp.swift"; sourceTree = "<group>"; };
+		DFFBC0172BF6861200304233 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DFFBC0192BF6861300304233 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DFFBC01B2BF6861300304233 /* Example-Recording.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Example-Recording.entitlements"; sourceTree = "<group>"; };
+		DFFBC01D2BF6861300304233 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DFFBC0292BF68AE200304233 /* AccessTokenProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenProvider.swift; sourceTree = "<group>"; };
+		DFFBC02B2BF68DEC00304233 /* AppMetadataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMetadataProvider.swift; sourceTree = "<group>"; };
+		DFFBC0302BF7A57200304233 /* RecordingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DFFBC00F2BF6861200304233 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7549B14A2DC40D450068631E /* DAXKit.xcframework in Frameworks */,
+				DFFBC02F2BF6991000304233 /* JWTDecode in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DFFBC0092BF6861200304233 = {
+			isa = PBXGroup;
+			children = (
+				DFFBC0142BF6861200304233 /* Example-Recording */,
+				DFFBC0132BF6861200304233 /* Products */,
+				DFFBC0242BF6863B00304233 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DFFBC0132BF6861200304233 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DFFBC0122BF6861200304233 /* Example-Recording.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DFFBC0142BF6861200304233 /* Example-Recording */ = {
+			isa = PBXGroup;
+			children = (
+				DFB487C82C090FF1002804AC /* Info.plist */,
+				DFFBC0152BF6861200304233 /* Example-RecordingApp.swift */,
+				DFFBC0302BF7A57200304233 /* RecordingViewModel.swift */,
+				DFFBC0172BF6861200304233 /* ContentView.swift */,
+				DFFBC02B2BF68DEC00304233 /* AppMetadataProvider.swift */,
+				DFFBC0292BF68AE200304233 /* AccessTokenProvider.swift */,
+				DFFBC0192BF6861300304233 /* Assets.xcassets */,
+				DFFBC01B2BF6861300304233 /* Example-Recording.entitlements */,
+				DFFBC01C2BF6861300304233 /* Preview Content */,
+			);
+			path = "Example-Recording";
+			sourceTree = "<group>";
+		};
+		DFFBC01C2BF6861300304233 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				DFFBC01D2BF6861300304233 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DFFBC0242BF6863B00304233 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7549B1462DC400920068631E /* DAXKit.xcframework */,
+				7549B1492DC40D450068631E /* DAXKit.xcframework */,
+				DFE4929C2C5002F40091E814 /* daxkit */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DFFBC0112BF6861200304233 /* Example-Recording */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFFBC0212BF6861300304233 /* Build configuration list for PBXNativeTarget "Example-Recording" */;
+			buildPhases = (
+				DFFBC00E2BF6861200304233 /* Sources */,
+				DFFBC00F2BF6861200304233 /* Frameworks */,
+				DFFBC0102BF6861200304233 /* Resources */,
+				7549B14C2DC40D450068631E /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Example-Recording";
+			packageProductDependencies = (
+				DFFBC02E2BF6991000304233 /* JWTDecode */,
+			);
+			productName = "Example-Recording";
+			productReference = DFFBC0122BF6861200304233 /* Example-Recording.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DFFBC00A2BF6861200304233 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					DFFBC0112BF6861200304233 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = DFFBC00D2BF6861200304233 /* Build configuration list for PBXProject "Example-Recording" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DFFBC0092BF6861200304233;
+			packageReferences = (
+				DFFBC02D2BF6991000304233 /* XCRemoteSwiftPackageReference "JWTDecode" */,
+			);
+			productRefGroup = DFFBC0132BF6861200304233 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DFFBC0112BF6861200304233 /* Example-Recording */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DFFBC0102BF6861200304233 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFFBC01E2BF6861300304233 /* Preview Assets.xcassets in Resources */,
+				DFFBC01A2BF6861300304233 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DFFBC00E2BF6861200304233 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFFBC02A2BF68AE200304233 /* AccessTokenProvider.swift in Sources */,
+				DFFBC02C2BF68DEC00304233 /* AppMetadataProvider.swift in Sources */,
+				DFFBC0312BF7A57200304233 /* RecordingViewModel.swift in Sources */,
+				DFFBC0182BF6861200304233 /* ContentView.swift in Sources */,
+				DFFBC0162BF6861200304233 /* Example-RecordingApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		DFFBC01F2BF6861300304233 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DFFBC0202BF6861300304233 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		DFFBC0222BF6861300304233 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Example-Recording/Example-Recording.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Example-Recording/Preview Content\"";
+				DEVELOPMENT_TEAM = CZ53Q653EJ;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Example-Recording/Info.plist";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Microphone required to record audio";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nuance.daxkit.Example-Recording";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DFFBC0232BF6861300304233 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Example-Recording/Example-Recording.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Example-Recording/Preview Content\"";
+				DEVELOPMENT_TEAM = CZ53Q653EJ;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Example-Recording/Info.plist";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Microphone required to record audio";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nuance.daxkit.Example-Recording";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DFFBC00D2BF6861200304233 /* Build configuration list for PBXProject "Example-Recording" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFFBC01F2BF6861300304233 /* Debug */,
+				DFFBC0202BF6861300304233 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DFFBC0212BF6861300304233 /* Build configuration list for PBXNativeTarget "Example-Recording" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFFBC0222BF6861300304233 /* Debug */,
+				DFFBC0232BF6861300304233 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DFFBC02D2BF6991000304233 /* XCRemoteSwiftPackageReference "JWTDecode" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/auth0/JWTDecode.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DFFBC02E2BF6991000304233 /* JWTDecode */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DFFBC02D2BF6991000304233 /* XCRemoteSwiftPackageReference "JWTDecode" */;
+			productName = JWTDecode;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = DFFBC00A2BF6861200304233 /* Project object */;
+}
