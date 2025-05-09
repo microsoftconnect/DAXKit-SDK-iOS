@@ -953,6 +953,31 @@
           },
           {
             "kind": "Function",
+            "name": "digitalSilenceDetected",
+            "printedName": "digitalSilenceDetected()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@DAXKit@objc(pl)RecordingDelegate(im)digitalSilenceDetected",
+            "mangledName": "$s6DAXKit17RecordingDelegateP22digitalSilenceDetectedyyF",
+            "moduleName": "DAXKit",
+            "genericSig": "<τ_0_0 where τ_0_0 : DAXKit.RecordingDelegate>",
+            "sugared_genericSig": "<Self where Self : DAXKit.RecordingDelegate>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment",
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "recordingInterrupted",
             "printedName": "recordingInterrupted(reason:)",
             "children": [
@@ -7720,91 +7745,91 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/API\/Recorder.swift",
       "kind": "IntegerLiteral",
-      "offset": 2697,
+      "offset": 2810,
       "length": 11,
       "value": "1"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/API\/Recorder.swift",
       "kind": "IntegerLiteral",
-      "offset": 2784,
+      "offset": 2897,
       "length": 18,
       "value": "2"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/API\/Recorder.swift",
       "kind": "IntegerLiteral",
-      "offset": 2897,
+      "offset": 3010,
       "length": 23,
       "value": "3"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/API\/Recorder.swift",
       "kind": "IntegerLiteral",
-      "offset": 3015,
+      "offset": 3128,
       "length": 17,
       "value": "4"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/API\/Recorder.swift",
       "kind": "IntegerLiteral",
-      "offset": 2697,
+      "offset": 2810,
       "length": 11,
       "value": "1"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/API\/Recorder.swift",
       "kind": "IntegerLiteral",
-      "offset": 2784,
+      "offset": 2897,
       "length": 18,
       "value": "2"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/API\/Recorder.swift",
       "kind": "IntegerLiteral",
-      "offset": 2897,
+      "offset": 3010,
       "length": 23,
       "value": "3"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/API\/Recorder.swift",
       "kind": "IntegerLiteral",
-      "offset": 3015,
+      "offset": 3128,
       "length": 17,
       "value": "4"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/API\/Recorder.swift",
       "kind": "IntegerLiteral",
-      "offset": 3290,
+      "offset": 3403,
       "length": 5,
       "value": "1"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/API\/Recorder.swift",
       "kind": "IntegerLiteral",
-      "offset": 3290,
+      "offset": 3403,
       "length": 5,
       "value": "1"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/API\/Recorder.swift",
       "kind": "StringLiteral",
-      "offset": 3395,
+      "offset": 3508,
       "length": 16,
       "value": "\"DAXKit.AudioInputDevice\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/API\/Recorder.swift",
       "kind": "Array",
-      "offset": 4895,
+      "offset": 5008,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/API\/Recorder.swift",
       "kind": "StringLiteral",
-      "offset": 3798,
+      "offset": 3911,
       "length": 8,
       "value": "\"DAXKit.Recorder\""
     },
@@ -8287,7 +8312,7 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/Nodes\/RecordingDataNode.swift",
       "kind": "BooleanLiteral",
-      "offset": 56812,
+      "offset": 57212,
       "length": 5,
       "value": "false"
     },
@@ -8401,7 +8426,7 @@
       "kind": "IntegerLiteral",
       "offset": 335,
       "length": 1,
-      "value": "3"
+      "value": "4"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/Version.swift",

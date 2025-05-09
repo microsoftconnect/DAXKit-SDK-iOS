@@ -147,4 +147,8 @@ final class RecordingViewModel: ObservableObject, RecordingDelegate {
         // **Note** that this callback is not guarenteed to fire at a consistent rate.
         audioLevel = level
     }
+    
+    func digitalSilenceDetected() {
+        print("Digital Silence Detected")
+    }
 }
