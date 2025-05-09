@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7549B14A2DC40D450068631E /* DAXKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7549B1492DC40D450068631E /* DAXKit.xcframework */; };
-		7549B14B2DC40D450068631E /* DAXKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7549B1492DC40D450068631E /* DAXKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DFE4929E2C5003070091E814 /* DAXKit in Frameworks */ = {isa = PBXBuildFile; productRef = DFE4929D2C5003070091E814 /* DAXKit */; };
+		DFE4929F2C5003070091E814 /* DAXKit in Embed Frameworks */ = {isa = PBXBuildFile; productRef = DFE4929D2C5003070091E814 /* DAXKit */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		DFFBC0162BF6861200304233 /* Example-RecordingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFBC0152BF6861200304233 /* Example-RecordingApp.swift */; };
 		DFFBC0182BF6861200304233 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFBC0172BF6861200304233 /* ContentView.swift */; };
 		DFFBC01A2BF6861300304233 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFFBC0192BF6861300304233 /* Assets.xcassets */; };
@@ -20,13 +20,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		7549B14C2DC40D450068631E /* Embed Frameworks */ = {
+		DFFBC0282BF6863B00304233 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7549B14B2DC40D450068631E /* DAXKit.xcframework in Embed Frameworks */,
+				DFE4929F2C5003070091E814 /* DAXKit in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -34,8 +34,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		7549B1462DC400920068631E /* DAXKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = DAXKit.xcframework; sourceTree = "<group>"; };
-		7549B1492DC40D450068631E /* DAXKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = DAXKit.xcframework; path = ../DAXKit.xcframework; sourceTree = "<group>"; };
 		DFB487C82C090FF1002804AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		DFE4929C2C5002F40091E814 /* daxkit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = daxkit; path = ../../daxkit; sourceTree = "<group>"; };
 		DFFBC0122BF6861200304233 /* Example-Recording.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Example-Recording.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,8 +52,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7549B14A2DC40D450068631E /* DAXKit.xcframework in Frameworks */,
 				DFFBC02F2BF6991000304233 /* JWTDecode in Frameworks */,
+				DFE4929E2C5003070091E814 /* DAXKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,8 +104,6 @@
 		DFFBC0242BF6863B00304233 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7549B1462DC400920068631E /* DAXKit.xcframework */,
-				7549B1492DC40D450068631E /* DAXKit.xcframework */,
 				DFE4929C2C5002F40091E814 /* daxkit */,
 			);
 			name = Frameworks;
@@ -123,7 +119,7 @@
 				DFFBC00E2BF6861200304233 /* Sources */,
 				DFFBC00F2BF6861200304233 /* Frameworks */,
 				DFFBC0102BF6861200304233 /* Resources */,
-				7549B14C2DC40D450068631E /* Embed Frameworks */,
+				DFFBC0282BF6863B00304233 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +128,7 @@
 			name = "Example-Recording";
 			packageProductDependencies = (
 				DFFBC02E2BF6991000304233 /* JWTDecode */,
+				DFE4929D2C5003070091E814 /* DAXKit */,
 			);
 			productName = "Example-Recording";
 			productReference = DFFBC0122BF6861200304233 /* Example-Recording.app */;
@@ -430,6 +427,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		DFE4929D2C5003070091E814 /* DAXKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DAXKit;
+		};
 		DFFBC02E2BF6991000304233 /* JWTDecode */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DFFBC02D2BF6991000304233 /* XCRemoteSwiftPackageReference "JWTDecode" */;

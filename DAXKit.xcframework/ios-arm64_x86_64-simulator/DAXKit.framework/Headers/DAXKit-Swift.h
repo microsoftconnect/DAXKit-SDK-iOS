@@ -566,6 +566,8 @@ SWIFT_PROTOCOL("_TtP6DAXKit17RecordingDelegate_")
 /// \param recordingDuration The duration of audio, recorded for the recording
 ///
 - (void)didStopRecordingWithRecordingIdentifier:(NSString * _Nonnull)recordingIdentifier sessionIdentifier:(NSString * _Nonnull)sessionIdentifier recordingDuration:(NSTimeInterval)recordingDuration;
+/// Callback to let user know the device is recording digital silence
+- (void)digitalSilenceDetected;
 /// Callback for when a recording is interrupted for any reason
 /// \param reason Reason for the recording being interrupted
 ///
@@ -1205,6 +1207,8 @@ SWIFT_PROTOCOL("_TtP6DAXKit17RecordingDelegate_")
 /// \param recordingDuration The duration of audio, recorded for the recording
 ///
 - (void)didStopRecordingWithRecordingIdentifier:(NSString * _Nonnull)recordingIdentifier sessionIdentifier:(NSString * _Nonnull)sessionIdentifier recordingDuration:(NSTimeInterval)recordingDuration;
+/// Callback to let user know the device is recording digital silence
+- (void)digitalSilenceDetected;
 /// Callback for when a recording is interrupted for any reason
 /// \param reason Reason for the recording being interrupted
 ///

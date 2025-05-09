@@ -41,6 +41,7 @@ public enum AccessTokenProviderError : Swift.Error {
   @objc func didStartRecording(recordingIdentifier: Swift.String, sessionIdentifier: Swift.String, audioInputDevice: DAXKit.AudioInputDevice)
   @objc func didFailToStartRecording(sessionIdentifier: Swift.String, error: Swift.Error)
   @objc func didStopRecording(recordingIdentifier: Swift.String, sessionIdentifier: Swift.String, recordingDuration: Foundation.TimeInterval)
+  @objc func digitalSilenceDetected()
   @objc func recordingInterrupted(reason: DAXKit.RecordingInterruptionReason)
   @objc func reachedWarnDuration(timeLeft: Foundation.TimeInterval)
   @objc func recordedAudio(withDuration duration: Foundation.TimeInterval, audioLevel level: Swift.Float)
