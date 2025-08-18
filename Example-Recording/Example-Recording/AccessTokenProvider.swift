@@ -12,9 +12,9 @@ import JWTDecode
 /// Example implementation of an AccessTokenProvider backed by machine-to-machine authentication.
 final class Machine2MachineAccessTokenProvider: NSObject, AccessTokenProvider {
     let domainURL = "https://nuancehdpdev.auth0.com/oauth/token"
-    let client_id = "ClientId"
-    let secret = "ClientSecret"
-    let audience = "AuthAudience"
+    let client_id = <#clientId#>
+    let secret = <#clientSecret#>
+    let audience = <#audience#>
 
     /// DAXKit calls this function whenever it requires an authentication token to talk to its servers.
     /// This can be called multiple times per upload if there are network disconnects.
