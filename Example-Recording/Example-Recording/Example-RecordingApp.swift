@@ -31,7 +31,7 @@ struct Example_RecordingApp: App {
             withAppMetadataProvider: ExampleAppMetadataProvider(),
             accessTokenProvider: Machine2MachineAccessTokenProvider(),
             delegate: daxkitdelegate,
-            partnerId: "44f33add-5032-452c-9c23-82a903307a8e"
+            partnerId: <#partnerId#>
         )
     }
 
@@ -40,22 +40,22 @@ struct Example_RecordingApp: App {
         // Inform DAXKit who the user is and what product they are using.
         try DAX.shared.configure([
             // Associated DAX product. Associated Value Type: String
-            DAX.ConfigurationKeys.Provider.productId: "ProductId",
+            DAX.ConfigurationKeys.Provider.productId: <#T##productId: String##productId#>,
 
             // Org id from NMS. Associated Value Type: String
-            DAX.ConfigurationKeys.Provider.orgId: "OrgId",
+            DAX.ConfigurationKeys.Provider.orgId: <#T##orgId: String##orgId#>,
             
             // DAX Specific user identifier. Associated Value Type: String
-            DAX.ConfigurationKeys.Provider.userId: "UserId",
+            DAX.ConfigurationKeys.Provider.userId: <#T##userId: String##userId#>,
 
             // EMR specific user identifier. Associated Value Type: String
-            DAX.ConfigurationKeys.Provider.emrId: "EMRId",
+            DAX.ConfigurationKeys.Provider.emrId: <#T##emrId: String##emrId#>
 
             // User email. Associated Value Type: String
-            DAX.ConfigurationKeys.Provider.email: "User@email.com",
+            DAX.ConfigurationKeys.Provider.email: <#T##email: String##email#>,
 
             // User's name. Associated Value Type: String
-            DAX.ConfigurationKeys.Provider.name: "User Name",
+            DAX.ConfigurationKeys.Provider.name: <#T##name: String##name#>,
 
             // User's geography. Associated Value Type: ISO 3166-1 Alpha2 String
             DAX.ConfigurationKeys.Provider.geography: "US",
@@ -92,4 +92,7 @@ final class DAXDelegate: DAXKitDelegate {
     func didCompleteSession(identifier: String) {}
     func didFailToCompleteSession(identifier: String, withError error: any Error) {}
     func didReceiveSupportedLanguages(recordingLocales: [Locale], reportLocales: [Locale]) {}
+
+    // TODO: remove
+    func updatedRecording(recordingIdentifier: String, sessionIdentifier: String) {}
 }
