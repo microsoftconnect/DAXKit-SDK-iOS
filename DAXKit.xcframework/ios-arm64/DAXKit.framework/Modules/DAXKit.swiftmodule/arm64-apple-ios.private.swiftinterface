@@ -136,7 +136,7 @@ extension DAXKit.DAXKitDelegate {
   @objc public static var shared: DAXKit.DAX {
     @objc get
   }
-  @objc public static func start(withAppMetadataProvider appMetadataProvider: any DAXKit.AppMetadataProvider, accessTokenProvider: any DAXKit.AccessTokenProvider, delegate: any DAXKit.DAXKitDelegate, partnerId: Swift.String) throws
+  @objc public static func start(withAppMetadataProvider appMetadataProvider: any DAXKit.AppMetadataProvider, accessTokenProvider: any DAXKit.AccessTokenProvider, delegate: any DAXKit.DAXKitDelegate, partnerId: Swift.String, cleanupUserDefaults: Swift.Bool = true) throws
   @objc public func session(withIdentifier identifier: Swift.String, ehrData: DAXKit.EHRData?, workflow: DAXKit.WorkflowSettings = WorkflowSettings(), reportLocale: Foundation.Locale? = nil, uxLocale: Foundation.Locale? = nil) -> DAXKit.DAXSession
   @objc public func configure(_ configuration: [Swift.String : Any]) throws
   @objc public func disableLogging()

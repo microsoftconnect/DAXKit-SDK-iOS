@@ -374,7 +374,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) DAX * _Nonnu
 ///
 /// \param partnerId Partner indentifier per ehr company
 ///
-+ (BOOL)startWithAppMetadataProvider:(id <AppMetadataProvider> _Nonnull)appMetadataProvider accessTokenProvider:(id <AccessTokenProvider> _Nonnull)accessTokenProvider delegate:(id <DAXKitDelegate> _Nonnull)delegate partnerId:(NSString * _Nonnull)partnerId error:(NSError * _Nullable * _Nullable)error;
+/// \param cleanupUserDefaults Flag to tell daxkit if it should automatically clean up user defaults for leaked data. True - DAX will clean up, False - Application is responsible
+///
++ (BOOL)startWithAppMetadataProvider:(id <AppMetadataProvider> _Nonnull)appMetadataProvider accessTokenProvider:(id <AccessTokenProvider> _Nonnull)accessTokenProvider delegate:(id <DAXKitDelegate> _Nonnull)delegate partnerId:(NSString * _Nonnull)partnerId cleanupUserDefaults:(BOOL)cleanupUserDefaults error:(NSError * _Nullable * _Nullable)error;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 /// Retrieve the DAXSession for the given unique identifier
