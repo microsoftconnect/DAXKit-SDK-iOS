@@ -2238,6 +2238,13 @@
         ]
       },
       {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "DAXKit"
+      },
+      {
         "kind": "TypeDecl",
         "name": "DAXKitError",
         "printedName": "DAXKitError",
@@ -3902,7 +3909,7 @@
           {
             "kind": "Function",
             "name": "start",
-            "printedName": "start(withAppMetadataProvider:accessTokenProvider:delegate:partnerId:)",
+            "printedName": "start(withAppMetadataProvider:accessTokenProvider:delegate:partnerId:cleanupUserDefaults:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -3932,11 +3939,18 @@
                 "name": "String",
                 "printedName": "Swift.String",
                 "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@DAXKit@objc(cs)DAX(cm)startWithAppMetadataProvider:accessTokenProvider:delegate:partnerId:error:",
-            "mangledName": "$s6DAXKit3DAXC5start23withAppMetadataProvider011accessTokenG08delegate9partnerIdyAA0efG0_p_AA06AccessiG0_pAA0A8Delegate_pSStKFZ",
+            "usr": "c:@M@DAXKit@objc(cs)DAX(cm)startWithAppMetadataProvider:accessTokenProvider:delegate:partnerId:cleanupUserDefaults:error:",
+            "mangledName": "$s6DAXKit3DAXC5start23withAppMetadataProvider011accessTokenG08delegate9partnerId19cleanupUserDefaultsyAA0efG0_p_AA06AccessiG0_pAA0A8Delegate_pSSSbtKFZ",
             "moduleName": "DAXKit",
             "static": true,
             "declAttributes": [
@@ -5022,6 +5036,16 @@
         "kind": "Import",
         "name": "SpokeKit_Legacy",
         "printedName": "SpokeKit_Legacy",
+        "declKind": "Import",
+        "moduleName": "DAXKit",
+        "declAttributes": [
+          "ImplementationOnly"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Atomics",
+        "printedName": "Atomics",
         "declKind": "Import",
         "moduleName": "DAXKit",
         "declAttributes": [
@@ -8273,14 +8297,14 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/API\/DAXSession.swift",
       "kind": "Array",
-      "offset": 4231,
+      "offset": 4347,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/API\/DAXSession.swift",
       "kind": "BooleanLiteral",
-      "offset": 4262,
+      "offset": 4378,
       "length": 4,
       "value": "true"
     },
@@ -8329,142 +8353,156 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/API\/Recorder.swift",
       "kind": "Array",
-      "offset": 5109,
+      "offset": 5240,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
       "kind": "StringLiteral",
-      "offset": 5485,
+      "offset": 5498,
       "length": 17,
       "value": "\"provider.userId\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
       "kind": "StringLiteral",
-      "offset": 5605,
+      "offset": 5618,
       "length": 16,
       "value": "\"provider.email\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
       "kind": "StringLiteral",
-      "offset": 5742,
+      "offset": 5755,
       "length": 16,
       "value": "\"provider.emrId\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
       "kind": "StringLiteral",
-      "offset": 5861,
+      "offset": 5874,
       "length": 15,
       "value": "\"provider.name\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
       "kind": "StringLiteral",
-      "offset": 5984,
+      "offset": 5997,
       "length": 16,
       "value": "\"provider.orgId\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
       "kind": "StringLiteral",
-      "offset": 6119,
+      "offset": 6132,
       "length": 20,
       "value": "\"provider.productId\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
       "kind": "StringLiteral",
-      "offset": 6261,
+      "offset": 6274,
       "length": 20,
       "value": "\"provider.geography\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
       "kind": "StringLiteral",
-      "offset": 6490,
+      "offset": 6503,
       "length": 24,
       "value": "\"provider.cloudInstance\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
       "kind": "StringLiteral",
-      "offset": 8170,
+      "offset": 8183,
       "length": 32,
       "value": "\"server_environment.environment\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
       "kind": "StringLiteral",
-      "offset": 8490,
+      "offset": 8503,
       "length": 34,
       "value": "\"server_environment.cloudInstance\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
       "kind": "StringLiteral",
-      "offset": 10461,
+      "offset": 10474,
       "length": 26,
       "value": "\"DragonConfigListenerNode\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
       "kind": "StringLiteral",
-      "offset": 10709,
+      "offset": 10722,
       "length": 65,
       "value": "\"Unexpected event received by DragonConfigListenerNode: \""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
       "kind": "StringLiteral",
-      "offset": 10773,
+      "offset": 10786,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
       "kind": "StringLiteral",
-      "offset": 10912,
+      "offset": 10925,
       "length": 64,
       "value": "\"Attempting to request Dragon Configuration without a provider!\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
       "kind": "StringLiteral",
-      "offset": 11015,
+      "offset": 11028,
       "length": 64,
       "value": "\"Attempting to request Dragon Configuration without a provider!\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
       "kind": "StringLiteral",
-      "offset": 11154,
+      "offset": 11167,
       "length": 56,
       "value": "\"Sending Dragon Configuration to live and backup chains\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
       "kind": "BooleanLiteral",
-      "offset": 11693,
+      "offset": 11706,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
       "kind": "BooleanLiteral",
-      "offset": 11749,
+      "offset": 11762,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
       "kind": "Dictionary",
-      "offset": 12539,
+      "offset": 12650,
       "length": 3,
       "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
+      "kind": "StringLiteral",
+      "offset": 12688,
+      "length": 38,
+      "value": "\"90e790f9-2c4a-4e58-b082-70a795034e74\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
+      "kind": "BooleanLiteral",
+      "offset": 13956,
+      "length": 4,
+      "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/Data\/CoreDataService.swift",
@@ -8686,58 +8724,107 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/Logging\/ApplicationInsights.swift",
       "kind": "IntegerLiteral",
-      "offset": 683,
+      "offset": 447,
       "length": 4,
       "value": "5000"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/Logging\/ApplicationInsights.swift",
       "kind": "Array",
-      "offset": 2092,
+      "offset": 2114,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/Logging\/DaxKitLogHandler.swift",
+      "kind": "BooleanLiteral",
+      "offset": 325,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/Logging\/DaxKitLogHandler.swift",
+      "kind": "BooleanLiteral",
+      "offset": 442,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/Logging\/DaxKitLogHandler.swift",
+      "kind": "BooleanLiteral",
+      "offset": 553,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/Logging\/DaxKitLogHandler.swift",
       "kind": "StringLiteral",
-      "offset": 485,
+      "offset": 595,
       "length": 19,
       "value": "\"com.nuance.daxkit\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/Logging\/DaxKitLogHandler.swift",
       "kind": "BooleanLiteral",
-      "offset": 1369,
+      "offset": 1517,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/Logging\/DaxKitLogHandler.swift",
       "kind": "IntegerLiteral",
-      "offset": 1616,
+      "offset": 2051,
       "length": 1,
       "value": "0"
     },
     {
+      "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/Logging\/DaxKitLogHandler.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2119,
+      "length": 5,
+      "value": "false"
+    },
+    {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/Logging\/LogFileDestination.swift",
       "kind": "StringLiteral",
-      "offset": 669,
+      "offset": 720,
       "length": 20,
       "value": "\"InstrumentationKey\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/Logging\/LogFileDestination.swift",
       "kind": "StringLiteral",
-      "offset": 738,
+      "offset": 789,
       "length": 19,
       "value": "\"IngestionEndpoint\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/Logging\/LogFileManager.swift",
       "kind": "Dictionary",
-      "offset": 813,
+      "offset": 702,
       "length": 3,
       "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/Logging\/LogFileManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 801,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/Logging\/LogFileManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 902,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/Logging\/LogFileManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 987,
+      "length": 4,
+      "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/Networking\/NetworkMonitor.swift",
@@ -8756,14 +8843,7 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/Networking\/NetworkMonitor.swift",
       "kind": "StringLiteral",
-      "offset": 743,
-      "length": 38,
-      "value": "\"Could not upload logs to AppInsights\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/Networking\/NetworkMonitor.swift",
-      "kind": "StringLiteral",
-      "offset": 872,
+      "offset": 710,
       "length": 35,
       "value": "\"NetworkMonitor - Lost connection.\""
     },
@@ -8856,7 +8936,7 @@
       "kind": "IntegerLiteral",
       "offset": 335,
       "length": 1,
-      "value": "0"
+      "value": "1"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/Version.swift",

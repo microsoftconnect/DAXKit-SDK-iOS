@@ -49,7 +49,7 @@ struct Example_RecordingApp: App {
             DAX.ConfigurationKeys.Provider.userId: <#T##userId: String##userId#>,
 
             // EMR specific user identifier. Associated Value Type: String
-            DAX.ConfigurationKeys.Provider.emrId: <#T##emrId: String##emrId#>
+            DAX.ConfigurationKeys.Provider.emrId: <#T##emrId: String##emrId#>,
 
             // User email. Associated Value Type: String
             DAX.ConfigurationKeys.Provider.email: <#T##email: String##email#>,
