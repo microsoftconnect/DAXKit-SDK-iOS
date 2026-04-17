@@ -265,6 +265,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -663,7 +670,7 @@
           {
             "kind": "Function",
             "name": "startRecording",
-            "printedName": "startRecording(delegate:locales:autoNoteGeneration:)",
+            "printedName": "startRecording(delegate:locales:autoNoteGeneration:outputFormIds:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -698,11 +705,34 @@
                 "printedName": "Swift.Bool",
                 "hasDefaultArg": true,
                 "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@DAXKit@objc(cs)DAXSession(im)startRecordingWithDelegate:locales:autoNoteGeneration:error:",
-            "mangledName": "$s6DAXKit10DAXSessionC14startRecording8delegate7locales18autoNoteGenerationAA8RecorderCAA0D8Delegate_p_Say10Foundation6LocaleVGSbtKF",
+            "usr": "c:@M@DAXKit@objc(cs)DAXSession(im)startRecordingWithDelegate:locales:autoNoteGeneration:outputFormIds:error:",
+            "mangledName": "$s6DAXKit10DAXSessionC14startRecording8delegate7locales18autoNoteGeneration13outputFormIdsAA8RecorderCAA0D8Delegate_p_Say10Foundation6LocaleVGSbSaySSGSgtKF",
             "moduleName": "DAXKit",
             "declAttributes": [
               "AccessControl",
@@ -727,8 +757,10 @@
             "usr": "c:@M@DAXKit@objc(cs)DAXSession(im)completeAndReturnError:",
             "mangledName": "$s6DAXKit10DAXSessionC8completeyyKF",
             "moduleName": "DAXKit",
+            "deprecated": true,
             "declAttributes": [
               "AccessControl",
+              "Available",
               "RawDocComment",
               "ObjC"
             ],
@@ -2631,6 +2663,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -2840,8 +2879,10 @@
             "moduleName": "DAXKit",
             "genericSig": "<τ_0_0 where τ_0_0 : DAXKit.DAXKitDelegate>",
             "sugared_genericSig": "<Self where Self : DAXKit.DAXKitDelegate>",
+            "deprecated": true,
             "protocolReq": true,
             "declAttributes": [
+              "Available",
               "RawDocComment",
               "ObjC"
             ],
@@ -2877,8 +2918,10 @@
             "moduleName": "DAXKit",
             "genericSig": "<τ_0_0 where τ_0_0 : DAXKit.DAXKitDelegate>",
             "sugared_genericSig": "<Self where Self : DAXKit.DAXKitDelegate>",
+            "deprecated": true,
             "protocolReq": true,
             "declAttributes": [
+              "Available",
               "RawDocComment",
               "ObjC"
             ],
@@ -2961,7 +3004,9 @@
             "moduleName": "DAXKit",
             "genericSig": "<τ_0_0 where τ_0_0 : DAXKit.DAXKitDelegate>",
             "sugared_genericSig": "<Self where Self : DAXKit.DAXKitDelegate>",
+            "deprecated": true,
             "declAttributes": [
+              "Available",
               "RawDocComment"
             ],
             "isFromExtension": true,
@@ -2996,7 +3041,9 @@
             "moduleName": "DAXKit",
             "genericSig": "<τ_0_0 where τ_0_0 : DAXKit.DAXKitDelegate>",
             "sugared_genericSig": "<Self where Self : DAXKit.DAXKitDelegate>",
+            "deprecated": true,
             "declAttributes": [
+              "Available",
               "RawDocComment"
             ],
             "isFromExtension": true,
@@ -3965,7 +4012,7 @@
           {
             "kind": "Function",
             "name": "session",
-            "printedName": "session(withIdentifier:ehrData:workflow:reportLocale:uxLocale:)",
+            "printedName": "session(withIdentifier:ehrData:workflow:reportLocale:uxLocale:outputFormIds:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -4029,11 +4076,34 @@
                 ],
                 "hasDefaultArg": true,
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@DAXKit@objc(cs)DAX(im)sessionWithIdentifier:ehrData:workflow:reportLocale:uxLocale:",
-            "mangledName": "$s6DAXKit3DAXC7session14withIdentifier7ehrData8workflow12reportLocale02uxJ0AA10DAXSessionCSS_AA7EHRDataCSgAA16WorkflowSettingsC10Foundation0J0VSgATtF",
+            "usr": "c:@M@DAXKit@objc(cs)DAX(im)sessionWithIdentifier:ehrData:workflow:reportLocale:uxLocale:outputFormIds:",
+            "mangledName": "$s6DAXKit3DAXC7session14withIdentifier7ehrData8workflow12reportLocale02uxJ013outputFormIdsAA10DAXSessionCSS_AA7EHRDataCSgAA16WorkflowSettingsC10Foundation0J0VSgAUSaySSGSgtF",
             "moduleName": "DAXKit",
             "declAttributes": [
               "AccessControl",
@@ -5349,6 +5419,31 @@
         "declAttributes": [
           "ImplementationOnly"
         ]
+      },
+      {
+        "kind": "Import",
+        "name": "Logging",
+        "printedName": "Logging",
+        "declKind": "Import",
+        "moduleName": "DAXKit",
+        "declAttributes": [
+          "ImplementationOnly",
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "DAXKit"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "DAXKit"
       },
       {
         "kind": "Import",
@@ -6990,11 +7085,13 @@
             "usr": "c:@M@DAXKit@objc(cs)WorkflowSettings(py)deliverOnceOnSessionComplete",
             "mangledName": "$s6DAXKit16WorkflowSettingsC28deliverOnceOnSessionCompleteSbvp",
             "moduleName": "DAXKit",
+            "deprecated": true,
             "declAttributes": [
               "Final",
               "HasStorage",
               "AccessControl",
-              "ObjC"
+              "ObjC",
+              "Available"
             ],
             "isLet": true,
             "hasStorage": true,
@@ -7027,36 +7124,6 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(deliverOnceOnSessionComplete:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "WorkflowSettings",
-                "printedName": "DAXKit.WorkflowSettings",
-                "usr": "c:@M@DAXKit@objc(cs)WorkflowSettings"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "hasDefaultArg": true,
-                "usr": "s:Sb"
-              }
-            ],
-            "declKind": "Constructor",
-            "usr": "c:@M@DAXKit@objc(cs)WorkflowSettings(im)initWithDeliverOnceOnSessionComplete:",
-            "mangledName": "$s6DAXKit16WorkflowSettingsC28deliverOnceOnSessionCompleteACSb_tcfc",
-            "moduleName": "DAXKit",
-            "objc_name": "initWithDeliverOnceOnSessionComplete:",
-            "declAttributes": [
-              "AccessControl",
-              "ObjC"
-            ],
-            "init_kind": "Designated"
-          },
-          {
-            "kind": "Constructor",
-            "name": "init",
             "printedName": "init()",
             "children": [
               {
@@ -7071,12 +7138,43 @@
             "mangledName": "$s6DAXKit16WorkflowSettingsCACycfc",
             "moduleName": "DAXKit",
             "overriding": true,
-            "implicit": true,
             "objc_name": "init",
             "declAttributes": [
               "Dynamic",
               "ObjC",
-              "Override"
+              "Override",
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(deliverOnceOnSessionComplete:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "WorkflowSettings",
+                "printedName": "DAXKit.WorkflowSettings",
+                "usr": "c:@M@DAXKit@objc(cs)WorkflowSettings"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@DAXKit@objc(cs)WorkflowSettings(im)initWithDeliverOnceOnSessionComplete:",
+            "mangledName": "$s6DAXKit16WorkflowSettingsC28deliverOnceOnSessionCompleteACSb_tcfc",
+            "moduleName": "DAXKit",
+            "deprecated": true,
+            "objc_name": "initWithDeliverOnceOnSessionComplete:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "Available"
             ],
             "init_kind": "Designated"
           }
@@ -7090,6 +7188,7 @@
           "ObjC"
         ],
         "superclassUsr": "c:objc(cs)NSObject",
+        "inheritsConvenienceInitializers": true,
         "superclassNames": [
           "ObjectiveC.NSObject"
         ],
@@ -7644,21 +7743,14 @@
         "usr": "s:Sq",
         "mangledName": "$sSq",
         "moduleName": "Swift",
-        "genericSig": "<τ_0_0 where τ_0_0 : ~Copyable>",
-        "sugared_genericSig": "<Wrapped where Wrapped : ~Copyable>",
+        "genericSig": "<τ_0_0 where τ_0_0 : ~Copyable, τ_0_0 : ~Escapable>",
+        "sugared_genericSig": "<Wrapped where Wrapped : ~Copyable, Wrapped : ~Escapable>",
         "declAttributes": [
           "Frozen"
         ],
         "isExternal": true,
         "isEnumExhaustive": true,
         "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
           {
             "kind": "Conformance",
             "name": "Encodable",
@@ -7682,10 +7774,10 @@
           },
           {
             "kind": "Conformance",
-            "name": "Sendable",
-            "printedName": "Sendable",
-            "usr": "s:s8SendableP",
-            "mangledName": "$ss8SendableP"
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
           },
           {
             "kind": "Conformance",
@@ -7693,6 +7785,20 @@
             "printedName": "BitwiseCopyable",
             "usr": "s:s15BitwiseCopyableP",
             "mangledName": "$ss15BitwiseCopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           },
           {
             "kind": "Conformance",
@@ -7791,6 +7897,89 @@
             ],
             "usr": "s:10Foundation26DecodableWithConfigurationP",
             "mangledName": "$s10Foundation26DecodableWithConfigurationP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "AtomicRepresentable",
+            "printedName": "AtomicRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "AtomicRepresentation",
+                "printedName": "AtomicRepresentation",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DependentMember",
+                    "printedName": "τ_0_0.AtomicOptionalRepresentation"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:15Synchronization19AtomicRepresentableP",
+            "mangledName": "$s15Synchronization19AtomicRepresentableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "AtomicValue",
+            "printedName": "AtomicValue",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "AtomicRepresentation",
+                "printedName": "AtomicRepresentation",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DependentMember",
+                    "printedName": "τ_0_0.AtomicOptionalRepresentation"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:7Atomics11AtomicValueP",
+            "mangledName": "$s7Atomics11AtomicValueP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "AttributedTextFormattingDefinition",
+            "printedName": "AttributedTextFormattingDefinition",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Body",
+                "printedName": "Body",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OpaqueTypeArchetype",
+                    "printedName": "some SwiftUICore.AttributedTextFormattingDefinition<Wrapped.Scope>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AttributedTextFormattingDefinition",
+                        "printedName": "SwiftUICore.AttributedTextFormattingDefinition",
+                        "usr": "s:7SwiftUI34AttributedTextFormattingDefinitionP"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Scope",
+                "printedName": "Scope",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DependentMember",
+                    "printedName": "τ_0_0.Scope"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:7SwiftUI34AttributedTextFormattingDefinitionP",
+            "mangledName": "$s7SwiftUI34AttributedTextFormattingDefinitionP"
           },
           {
             "kind": "Conformance",
@@ -7991,6 +8180,55 @@
           },
           {
             "kind": "Conformance",
+            "name": "SliderTickContent",
+            "printedName": "SliderTickContent",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Value",
+                "printedName": "Value",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DependentMember",
+                    "printedName": "τ_0_0.Value"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Body",
+                "printedName": "Body",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[SwiftUI.SliderTick<τ_0_0.Value>]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SliderTick",
+                        "printedName": "SwiftUI.SliderTick<τ_0_0.Value>",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "DependentMember",
+                            "printedName": "τ_0_0.Value"
+                          }
+                        ],
+                        "usr": "s:7SwiftUI10SliderTickV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:7SwiftUI17SliderTickContentP",
+            "mangledName": "$s7SwiftUI17SliderTickContentP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Commands",
             "printedName": "Commands",
             "children": [
@@ -8039,27 +8277,6 @@
             "printedName": "CustomizableToolbarContent",
             "usr": "s:7SwiftUI26CustomizableToolbarContentP",
             "mangledName": "$s7SwiftUI26CustomizableToolbarContentP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "AtomicValue",
-            "printedName": "AtomicValue",
-            "children": [
-              {
-                "kind": "TypeWitness",
-                "name": "AtomicRepresentation",
-                "printedName": "AtomicRepresentation",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "DependentMember",
-                    "printedName": "τ_0_0.AtomicOptionalRepresentation"
-                  }
-                ]
-              }
-            ],
-            "usr": "s:7Atomics11AtomicValueP",
-            "mangledName": "$s7Atomics11AtomicValueP"
           }
         ]
       },
@@ -8259,6 +8476,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       }
@@ -8297,14 +8521,14 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/API\/DAXSession.swift",
       "kind": "Array",
-      "offset": 4347,
+      "offset": 3429,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/API\/DAXSession.swift",
       "kind": "BooleanLiteral",
-      "offset": 4378,
+      "offset": 3460,
       "length": 4,
       "value": "true"
     },
@@ -8353,154 +8577,161 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/API\/Recorder.swift",
       "kind": "Array",
-      "offset": 5240,
+      "offset": 5120,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
       "kind": "StringLiteral",
-      "offset": 5498,
+      "offset": 5968,
       "length": 17,
       "value": "\"provider.userId\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
       "kind": "StringLiteral",
-      "offset": 5618,
+      "offset": 6088,
       "length": 16,
       "value": "\"provider.email\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
       "kind": "StringLiteral",
-      "offset": 5755,
+      "offset": 6225,
       "length": 16,
       "value": "\"provider.emrId\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
       "kind": "StringLiteral",
-      "offset": 5874,
+      "offset": 6344,
       "length": 15,
       "value": "\"provider.name\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
       "kind": "StringLiteral",
-      "offset": 5997,
+      "offset": 6467,
       "length": 16,
       "value": "\"provider.orgId\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
       "kind": "StringLiteral",
-      "offset": 6132,
+      "offset": 6602,
       "length": 20,
       "value": "\"provider.productId\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
       "kind": "StringLiteral",
-      "offset": 6274,
+      "offset": 6744,
       "length": 20,
       "value": "\"provider.geography\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
       "kind": "StringLiteral",
-      "offset": 6503,
+      "offset": 6973,
       "length": 24,
       "value": "\"provider.cloudInstance\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
       "kind": "StringLiteral",
-      "offset": 8183,
+      "offset": 8653,
       "length": 32,
       "value": "\"server_environment.environment\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
       "kind": "StringLiteral",
-      "offset": 8503,
+      "offset": 8973,
       "length": 34,
       "value": "\"server_environment.cloudInstance\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
       "kind": "StringLiteral",
-      "offset": 10474,
+      "offset": 10944,
       "length": 26,
       "value": "\"DragonConfigListenerNode\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
       "kind": "StringLiteral",
-      "offset": 10722,
+      "offset": 11192,
       "length": 65,
       "value": "\"Unexpected event received by DragonConfigListenerNode: \""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
       "kind": "StringLiteral",
-      "offset": 10786,
+      "offset": 11256,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
       "kind": "StringLiteral",
-      "offset": 10925,
+      "offset": 11395,
       "length": 64,
       "value": "\"Attempting to request Dragon Configuration without a provider!\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
       "kind": "StringLiteral",
-      "offset": 11028,
+      "offset": 11498,
       "length": 64,
       "value": "\"Attempting to request Dragon Configuration without a provider!\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
       "kind": "StringLiteral",
-      "offset": 11167,
+      "offset": 11637,
       "length": 56,
       "value": "\"Sending Dragon Configuration to live and backup chains\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
       "kind": "BooleanLiteral",
-      "offset": 11706,
+      "offset": 12176,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
       "kind": "BooleanLiteral",
-      "offset": 11762,
+      "offset": 12232,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
       "kind": "Dictionary",
-      "offset": 12650,
+      "offset": 13120,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
       "kind": "StringLiteral",
-      "offset": 12688,
+      "offset": 13158,
       "length": 38,
       "value": "\"90e790f9-2c4a-4e58-b082-70a795034e74\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
+      "kind": "FloatLiteral",
+      "offset": 13406,
+      "length": 5,
+      "value": "600.0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/DAX.swift",
       "kind": "BooleanLiteral",
-      "offset": 13956,
+      "offset": 14796,
       "length": 4,
       "value": "true"
     },
@@ -8765,22 +8996,36 @@
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/Logging\/DaxKitLogHandler.swift",
+      "kind": "StringLiteral",
+      "offset": 1622,
+      "length": 35,
+      "value": "\"com.microsoft.daxkit.filecreation\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/Logging\/DaxKitLogHandler.swift",
+      "kind": "StringLiteral",
+      "offset": 1791,
+      "length": 32,
+      "value": "\"com.microsoft.daxkit.filewrite\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/Logging\/DaxKitLogHandler.swift",
       "kind": "BooleanLiteral",
-      "offset": 1517,
+      "offset": 1873,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/Logging\/DaxKitLogHandler.swift",
       "kind": "IntegerLiteral",
-      "offset": 2051,
+      "offset": 3029,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/Logging\/DaxKitLogHandler.swift",
       "kind": "BooleanLiteral",
-      "offset": 2119,
+      "offset": 3705,
       "length": 5,
       "value": "false"
     },
@@ -8864,23 +9109,30 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/Nodes\/RecordingDataNode.swift",
       "kind": "IntegerLiteral",
-      "offset": 5089,
+      "offset": 5211,
       "length": 2,
       "value": "30"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/Nodes\/RecordingDataNode.swift",
       "kind": "IntegerLiteral",
-      "offset": 5140,
+      "offset": 5262,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/Nodes\/RecordingDataNode.swift",
       "kind": "BooleanLiteral",
-      "offset": 60190,
+      "offset": 61260,
       "length": 5,
       "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/Utilities\/CrashDetector.swift",
+      "kind": "StringLiteral",
+      "offset": 818,
+      "length": 21,
+      "value": "\"daxkit_session.json\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/Utilities\/EHRData.swift",
@@ -8911,13 +9163,6 @@
       "value": "4"
     },
     {
-      "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/Utilities\/WorkflowSettings.swift",
-      "kind": "BooleanLiteral",
-      "offset": 515,
-      "length": 5,
-      "value": "false"
-    },
-    {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/Version.swift",
       "kind": "IntegerLiteral",
       "offset": 203,
@@ -8929,14 +9174,14 @@
       "kind": "IntegerLiteral",
       "offset": 269,
       "length": 1,
-      "value": "5"
+      "value": "6"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/Version.swift",
       "kind": "IntegerLiteral",
       "offset": 335,
       "length": 1,
-      "value": "1"
+      "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/Version.swift",

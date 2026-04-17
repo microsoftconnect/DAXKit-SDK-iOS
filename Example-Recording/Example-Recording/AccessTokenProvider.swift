@@ -58,7 +58,7 @@ final class Machine2MachineAccessTokenProvider: NSObject, AccessTokenProvider {
             let accessToken = json["access_token"] as? String
         else {
             print("\(Date().ISO8601Format())No valid access token returned")
-            throw AccessTokenProviderError.refreshFailed
+            throw AccessTokenProviderError.authenticationFailed
         }
         // Ensure the token hasn't expired.
         guard
@@ -66,7 +66,7 @@ final class Machine2MachineAccessTokenProvider: NSObject, AccessTokenProvider {
             !jwt.expired
         else {
             print("Received access token has expired")
-            throw AccessTokenProviderError.refreshFailed
+            throw AccessTokenProviderError.authenticationFailed
         }
         return accessToken
     }

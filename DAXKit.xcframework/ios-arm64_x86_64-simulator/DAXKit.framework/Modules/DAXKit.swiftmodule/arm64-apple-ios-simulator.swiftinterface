@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-compiler-version: Apple Swift version 6.2.3 effective-5.10 (swiftlang-6.2.3.3.21 clang-1700.6.3.2)
 // swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name DAXKit -package-name daxkit
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.3
 import Combine
 import CoreData
 import Foundation
@@ -35,8 +35,11 @@ public enum AccessTokenProviderError : Swift.Error {
 }
 @objc @_hasMissingDesignatedInitializers @objcMembers public class DAXSession : ObjectiveC.NSObject {
   @objc final public let identifier: Swift.String
-  @objc public func startRecording(delegate: any DAXKit.RecordingDelegate, locales: [Foundation.Locale] = [], autoNoteGeneration: Swift.Bool = true) throws -> DAXKit.Recorder
-  @objc public func complete() throws
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public func startRecording(delegate: any DAXKit.RecordingDelegate, locales: [Foundation.Locale] = [], autoNoteGeneration: Swift.Bool = true, outputFormIds: [Swift.String]? = nil) throws -> DAXKit.Recorder
+  #endif
+  @objc @available(*, deprecated, message: "Encounter complete workflow is no longer supported. This method is now a no-op.")
+  public func complete() throws
   @objc deinit
 }
 @objc public protocol RecordingDelegate {
@@ -55,7 +58,9 @@ public enum AccessTokenProviderError : Swift.Error {
   case incompatibleInputDevice
   case audioRouteChanged
   case databaseNotInitialized
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -64,7 +69,9 @@ public enum AccessTokenProviderError : Swift.Error {
 @objc public enum AudioInputDeviceType : Swift.Int {
   case builtInMic
   case other
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -80,9 +87,11 @@ public enum AccessTokenProviderError : Swift.Error {
   @objc public func stop() throws
   @objc deinit
 }
+#if compiler(>=5.3) && $NonescapableTypes
 extension Swift.Optional {
   public func require(hint hintExpression: @autoclosure () -> Swift.String? = nil, file: Swift.StaticString = #file, line: Swift.UInt = #line) -> Wrapped
 }
+#endif
 public struct DAXKitError : Foundation.LocalizedError {
   public enum Code {
     case internalError
@@ -103,12 +112,16 @@ public struct DAXKitError : Foundation.LocalizedError {
   @objc func recordingPermission(granted: Swift.Bool)
   @objc func didStartUpload(recordingIdentifier: Swift.String, sessionIdentifier: Swift.String)
   @objc func didFinishAllUploads()
-  @objc func didCompleteSession(identifier: Swift.String)
-  @objc func didFailToCompleteSession(identifier: Swift.String, withError error: any Swift.Error)
+  @objc @available(*, deprecated, message: "Encounter complete workflow is no longer supported. This delegate method will no longer be called.")
+  func didCompleteSession(identifier: Swift.String)
+  @objc @available(*, deprecated, message: "Encounter complete workflow is no longer supported. This delegate method will no longer be called.")
+  func didFailToCompleteSession(identifier: Swift.String, withError error: any Swift.Error)
   @objc func didReceiveSupportedLanguages(recordingLocales: [Foundation.Locale], reportLocales: [Foundation.Locale])
 }
 extension DAXKit.DAXKitDelegate {
+  @available(*, deprecated, message: "Encounter complete workflow is no longer supported.")
   public func didCompleteSession(identifier: Swift.String)
+  @available(*, deprecated, message: "Encounter complete workflow is no longer supported.")
   public func didFailToCompleteSession(identifier: Swift.String, withError error: any Swift.Error)
   public func didReceiveSupportedLanguages(recordingLocales: [Foundation.Locale], reportLocales: [Foundation.Locale])
 }
@@ -137,7 +150,9 @@ extension DAXKit.DAXKitDelegate {
     @objc get
   }
   @objc public static func start(withAppMetadataProvider appMetadataProvider: any DAXKit.AppMetadataProvider, accessTokenProvider: any DAXKit.AccessTokenProvider, delegate: any DAXKit.DAXKitDelegate, partnerId: Swift.String, cleanupUserDefaults: Swift.Bool = true) throws
-  @objc public func session(withIdentifier identifier: Swift.String, ehrData: DAXKit.EHRData?, workflow: DAXKit.WorkflowSettings = WorkflowSettings(), reportLocale: Foundation.Locale? = nil, uxLocale: Foundation.Locale? = nil) -> DAXKit.DAXSession
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public func session(withIdentifier identifier: Swift.String, ehrData: DAXKit.EHRData?, workflow: DAXKit.WorkflowSettings = WorkflowSettings(), reportLocale: Foundation.Locale? = nil, uxLocale: Foundation.Locale? = nil, outputFormIds: [Swift.String]? = nil) -> DAXKit.DAXSession
+  #endif
   @objc public func configure(_ configuration: [Swift.String : Any]) throws
   @objc public func disableLogging()
   @objc public func prepareToRecord() throws
@@ -158,7 +173,9 @@ extension DAXKit.DAXKitDelegate {
   @objc final public let mrn: Swift.String?
   @objc final public let patient: DAXKit.Patient?
   @objc final public let reasonForVisit: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(appointmentId: Swift.String?, encounterId: Swift.String?, mrn: Swift.String?, patient: DAXKit.Patient?, reasonForVisit: Swift.String?)
+  #endif
   @objc deinit
 }
 @objc public class Patient : ObjectiveC.NSObject {
@@ -168,7 +185,9 @@ extension DAXKit.DAXKitDelegate {
   @objc final public let lastName: Swift.String?
   @objc final public let dateOfBirth: Foundation.Date?
   @objc final public let gender: DAXKit.AdministrativeGender
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(id: Swift.String?, firstName: Swift.String?, middleName: Swift.String?, lastName: Swift.String?, dateOfBirth: Foundation.Date?, gender: DAXKit.AdministrativeGender)
+  #endif
   @objc deinit
 }
 @objc public enum AdministrativeGender : Swift.Int {
@@ -177,7 +196,9 @@ extension DAXKit.DAXKitDelegate {
   case female
   case other
   case unknown
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -196,9 +217,12 @@ extension Foundation.FileManager {
   public func logsDirectory() -> Foundation.URL
   public func createDAXDirectories() throws
 }
-@objc public class WorkflowSettings : ObjectiveC.NSObject {
+@_inheritsConvenienceInitializers @objc public class WorkflowSettings : ObjectiveC.NSObject {
+  @available(*, deprecated, message: "Encounter complete workflow is no longer supported. This property will be ignored.")
   @objc final public let deliverOnceOnSessionComplete: Swift.Bool
-  @objc public init(deliverOnceOnSessionComplete: Swift.Bool = false)
+  @objc override dynamic public init()
+  @available(*, deprecated, message: "Encounter complete workflow is no longer supported. Use init() instead.")
+  @objc public init(deliverOnceOnSessionComplete: Swift.Bool)
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc(DAXVersion) public class Version : ObjectiveC.NSObject {
