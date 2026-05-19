@@ -10,6 +10,6 @@ https://learn.microsoft.com/en-us/industry/healthcare/dragon-copilot/sdk/daxkit/
 If you are using Swift Package Manager (SPM) to manage your project dependencies, you can add the DAXKit-SDK-iOS package by adding it to your dependencies:
 ```
 dependencies: [
-    .package(url: "https://github.com/microsoftconnect/DAXKit-SDK-iOS", .upToNextMajor(from: "1.6.0"))
+    .package(url: "https://github.com/microsoftconnect/DAXKit-SDK-iOS", .upToNextMajor(from: "1.6.1"))
 ]
 ```
