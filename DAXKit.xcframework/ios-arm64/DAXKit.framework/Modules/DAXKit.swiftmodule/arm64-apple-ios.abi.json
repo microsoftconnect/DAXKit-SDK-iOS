@@ -9123,7 +9123,7 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/Nodes\/RecordingDataNode.swift",
       "kind": "BooleanLiteral",
-      "offset": 61260,
+      "offset": 61749,
       "length": 5,
       "value": "false"
     },
@@ -9181,7 +9181,7 @@
       "kind": "IntegerLiteral",
       "offset": 335,
       "length": 1,
-      "value": "0"
+      "value": "1"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/ios\/daxkit\/Sources\/DAXKit\/Version.swift",
