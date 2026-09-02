@@ -1,0 +1,146 @@
+name: Publish SPM manifest
+
+# Publishes the Swift Package Manager manifest for a release of the
+# DragonCopilotAmbient iOS SDK.
+#
+# The release build pipeline attaches the signed xcframework zips and the
+# rendered Package.swift to a GitHub release. When that release is published,
+# this workflow verifies the assets, commits the manifest, and moves the
+# release tag onto that commit so SwiftPM can resolve the version.
+#
+# WHY THE TAG MOVE MATTERS. SwiftPM reads Package.swift from the git tree at
+# the tag, not from the release assets. Creating the release necessarily
+# creates the tag, and at that moment it points at main -- which still carries
+# the PREVIOUS release's URLs and checksums. Leaving it there does not fail
+# loudly; the consumer resolves, builds green, and links the wrong binary.
+# Moving the tag is the step that closes it.
+#
+# WHY THE MANIFEST IS NOT RENDERED HERE. The build pipeline renders it and
+# validates the result before upload. Re-rendering it here would duplicate the
+# renderer, skip that validation, and invite drift. This workflow only
+# re-verifies and commits.
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: spm-manifest-${{ github.event.release.tag_name }}
+  cancel-in-progress: false
+
+jobs:
+  publish-manifest:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - id: collect
+        name: Download and verify release assets
+        env:
+          TAG: ${{ github.event.release.tag_name }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+
+          BRANCH="release/$TAG"
+          if ! git check-ref-format "refs/heads/$BRANCH"; then
+            echo "::error::Release tag '$TAG' yields an invalid branch name '$BRANCH'."
+            exit 1
+          fi
+
+          ASSET_DIR="$(mktemp -d)"
+          ASSETS_JSON="$RUNNER_TEMP/release-assets.json"
+          gh release view "$TAG" --repo "$GITHUB_REPOSITORY" --json assets > "$ASSETS_JSON"
+
+          AMBIENT_ASSET="DragonCopilotAmbient-${TAG}.xcframework.zip"
+          DAXKIT_ASSET="DAXKit-${TAG}.xcframework.zip"
+
+          for ASSET in "Package.swift" "$AMBIENT_ASSET" "$DAXKIT_ASSET"; do
+            if ! jq -e --arg a "$ASSET" '.assets[] | select(.name == $a)' "$ASSETS_JSON" > /dev/null; then
+              echo "::error::Required release asset is missing: $ASSET"
+              echo "Assets actually present:"
+              jq -r '.assets[].name' "$ASSETS_JSON"
+              exit 1
+            fi
+          done
+
+          gh release download "$TAG" --repo "$GITHUB_REPOSITORY" --dir "$ASSET_DIR" \
+            --pattern 'Package.swift' \
+            --pattern "$AMBIENT_ASSET" \
+            --pattern "$DAXKIT_ASSET"
+
+          # Independent re-verification. The producing pipeline computed these
+          # checksums before upload; recomputing them here from the bytes GitHub
+          # actually stored catches a corrupted or truncated upload before the
+          # manifest is committed and the tag is moved onto it.
+          for ASSET in "$AMBIENT_ASSET" "$DAXKIT_ASSET"; do
+            SUM="$(swift package compute-checksum "$ASSET_DIR/$ASSET" 2>/dev/null \
+                   || sha256sum "$ASSET_DIR/$ASSET" | awk '{print $1}')"
+            if ! grep -q "$SUM" "$ASSET_DIR/Package.swift"; then
+              echo "::error::Checksum for $ASSET ($SUM) does not appear in the published Package.swift."
+              echo "::error::Refusing to publish a manifest that does not match the released binaries."
+              exit 1
+            fi
+            if ! grep -q "releases/download/${TAG}/${ASSET}" "$ASSET_DIR/Package.swift"; then
+              echo "::error::Package.swift does not reference $ASSET at tag $TAG."
+              exit 1
+            fi
+          done
+
+          {
+            echo "branch=$BRANCH"
+            echo "manifest=$ASSET_DIR/Package.swift"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Commit manifest and move the tag onto it
+        env:
+          TAG: ${{ github.event.release.tag_name }}
+          BRANCH: ${{ steps.collect.outputs.branch }}
+          MANIFEST: ${{ steps.collect.outputs.manifest }}
+        run: |
+          set -euo pipefail
+
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git fetch origin main
+          if git ls-remote --exit-code --heads origin "$BRANCH" > /dev/null; then
+            git fetch origin "refs/heads/$BRANCH:refs/remotes/origin/$BRANCH"
+            git checkout -B "$BRANCH" "refs/remotes/origin/$BRANCH"
+          else
+            git checkout -B "$BRANCH" origin/main
+          fi
+
+          cp "$MANIFEST" Package.swift
+          git add Package.swift
+          if git diff --cached --quiet; then
+            echo "Package.swift already current on $BRANCH; no new commit."
+          else
+            git commit -m "Release $TAG - publish SPM manifest"
+          fi
+          git push --set-upstream origin "$BRANCH"
+
+          # Point the tag at the manifest commit. Without this the release tag
+          # still references main and consumers resolve the previous release's
+          # binaries. The release itself follows the tag, so the published
+          # release is unaffected apart from now being resolvable.
+          git tag -f "$TAG" HEAD
+          git push -f origin "refs/tags/$TAG"
+          echo "Tag $TAG now points at $(git rev-parse HEAD) on $BRANCH."
+
+      - name: Print merge-back URL
+        env:
+          BRANCH: ${{ steps.collect.outputs.branch }}
+        run: |
+          set -euo pipefail
+          echo "Manifest branch pushed: $BRANCH"
+          echo "Open the merge-back PR to keep main current:"
+          echo "https://github.com/$GITHUB_REPOSITORY/compare/main...$BRANCH?expand=1"
