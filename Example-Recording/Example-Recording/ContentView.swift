@@ -6,26 +6,25 @@
 //
 
 import SwiftUI
-import DAXKit
 
 struct ContentView: View {
-    @ObservedObject var viewModel = RecordingViewModel()
+    @ObservedObject var viewModel: RecordingViewModel
+
     var body: some View {
-        VStack {
+        VStack(spacing: 24) {
             switch viewModel.recordingState {
             case .idle:
-                // Show a record button when not recording.
                 Button("Record") {
-                    viewModel.openNewSession()
-                    viewModel.startRecording()
+                    Task {
+                        await viewModel.startRecording()
+                    }
                 }
+                .disabled(!viewModel.isReady)
             case .starting:
-                // Show a progress view while starting the recording.
                 ProgressView("Starting recording...")
             case .recording:
                 Spacer()
                 ZStack {
-                    // Audio feedback visualizer
                     Circle()
                         .scale(0.5 + CGFloat(viewModel.audioLevel))
                         .fill(.cyan)
@@ -33,18 +32,30 @@ struct ContentView: View {
                         .animation(.easeInOut, value: 0.5 + CGFloat(viewModel.audioLevel))
                         .frame(minWidth: 100, maxWidth: 200, minHeight: 100, maxHeight: 200)
 
-                    // Recording stop button
                     Button("Stop") {
-                        viewModel.stopRecording()
+                        Task {
+                            await viewModel.stopRecording()
+                        }
                     }
                 }
                 Spacer()
             }
+
+            if let statusMessage = viewModel.statusMessage {
+                Text(statusMessage)
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+                    .multilineTextAlignment(.center)
+            }
+
         }
         .padding()
+        .task {
+            viewModel.initializeAmbient()
+        }
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView(viewModel: RecordingViewModel())
 }

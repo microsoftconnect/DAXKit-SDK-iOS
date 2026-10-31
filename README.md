@@ -1,15 +1,28 @@
 # DAXKit-SDK-iOS
 
+This repository distributes the Dragon Copilot Ambient iOS SDK as signed
+binary Swift packages.
+
 ## Installation
 
-Complete installation notes can be found on Microsoft Learn
-https://learn.microsoft.com/en-us/industry/healthcare/dragon-copilot/sdk/daxkit/install
+### Swift Package Manager
 
-### Swift Package Manager install
+Add the public package with an exact version requirement:
 
-If you are using Swift Package Manager (SPM) to manage your project dependencies, you can add the DAXKit-SDK-iOS package by adding it to your dependencies:
-```
+```swift
 dependencies: [
-    .package(url: "https://github.com/microsoftconnect/DAXKit-SDK-iOS", .upToNextMajor(from: "1.6.1"))
+    .package(url: "https://github.com/microsoftconnect/DAXKit-SDK-iOS", exact: "3.0.1")
 ]
 ```
+
+Select the `DragonCopilotAmbient` product for your app target and link
+`Security.framework`. The package includes the DAXKit binary required by the
+Ambient SDK; do not add a separate DAXKit dependency or embed the legacy
+checked-in framework.
+
+## Recording example
+
+See [Example-Recording](Example-Recording/README.md) for a standalone Xcode
+sample using the public SDK tag `3.0.1`. It demonstrates client initialization,
+microphone permission, session recording, audio-level callbacks, and error
+handling without a private package feed or local SDK checkout.
