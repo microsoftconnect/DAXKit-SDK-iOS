@@ -6,68 +6,66 @@
 //
 
 import Foundation
-import DAXKit
-import JWTDecode
+import DragonCopilotAmbient
 
 /// Example implementation of an AccessTokenProvider backed by machine-to-machine authentication.
-final class Machine2MachineAccessTokenProvider: NSObject, AccessTokenProvider {
-    let domainURL = "https://nuancehdpdev.auth0.com/oauth/token"
-    let client_id = <#clientId#>
-    let secret = <#clientSecret#>
-    let audience = <#audience#>
+struct MachineToMachineAccessTokenProvider: AccessTokenProvider {
+    private let domainURL = URL(string: "https://example.com/oauth/token")
+    private let clientId = "ClientId"
+    private let clientSecret = "ClientSecret"
+    private let audience = "AuthAudience"
 
-    /// DAXKit calls this function whenever it requires an authentication token to talk to its servers.
+    /// Ambient calls this function whenever it requires an authentication token.
     /// This can be called multiple times per upload if there are network disconnects.
-    /// Ideally, your app should do the following:
-    /// * Cache the token locally
-    /// * Check to see if it is still valid when DAXKit requests a new token
-    /// If the token is invalid then it should be refreshed by your application.
     func accessToken(
-        onSuccess: @escaping (String) -> Void,
-        onFailure: @escaping (Error) -> Void
+        onSuccess: @escaping @Sendable (String, Date) -> Void,
+        onError: @escaping @Sendable (Error) -> Void
     ) {
-        guard let url = URL(string: domainURL) else {
-            fatalError("Invalid authentication domain URL")
+        guard let domainURL else {
+            onError(TokenProviderError.invalidResponse)
+            return
         }
-        Task {
+
+        Task.detached {
             do {
                 let uploadParams: [String: String] = [
                     "grant_type": "client_credentials",
-                    "client_id": client_id,
-                    "client_secret": secret,
+                    "client_id": clientId,
+                    "client_secret": clientSecret,
                     "audience": audience,
                 ]
-                var request = URLRequest(url: url)
+                var request = URLRequest(url: domainURL)
                 request.httpMethod = "POST"
                 request.httpBody = try JSONEncoder().encode(uploadParams)
                 request.setValue("application/json", forHTTPHeaderField: "content-type")
-                let (data, _) = try await URLSession.shared.data(for: request)
-                let accessToken = try Self.accessToken(from: data)
-                onSuccess(accessToken)
+                let (data, response) = try await URLSession.shared.data(for: request)
+                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                    throw TokenProviderError.requestFailed
+                }
+                let token = try Self.tokenResponse(from: data)
+                onSuccess(token.value, Date().addingTimeInterval(token.expiresIn))
             } catch {
-                print("\(Date().ISO8601Format()) Failed to get data from access token request.")
-                onFailure(error)
+                onError(error)
             }
         }
     }
 
-    private static func accessToken(from data: Data) throws -> String {
-        // Validate that the data returned contains an access token.
+    static func tokenResponse(from data: Data) throws -> (value: String, expiresIn: TimeInterval) {
         guard
             let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
-            let accessToken = json["access_token"] as? String
+            let accessToken = json["access_token"] as? String,
+            !accessToken.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty,
+            let expiresIn = (json["expires_in"] as? NSNumber)?.doubleValue,
+            expiresIn.isFinite,
+            expiresIn > 0
         else {
-            print("\(Date().ISO8601Format())No valid access token returned")
-            throw AccessTokenProviderError.authenticationFailed
+            throw TokenProviderError.invalidResponse
         }
-        // Ensure the token hasn't expired.
-        guard
-            let jwt = try? decode(jwt: accessToken),
-            !jwt.expired
-        else {
-            print("Received access token has expired")
-            throw AccessTokenProviderError.authenticationFailed
-        }
-        return accessToken
+        return (accessToken, expiresIn)
     }
+}
+
+private enum TokenProviderError: Error {
+    case requestFailed
+    case invalidResponse
 }

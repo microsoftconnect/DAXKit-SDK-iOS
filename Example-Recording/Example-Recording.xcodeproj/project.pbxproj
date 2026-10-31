@@ -7,36 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		75EB5D812E53E16D00B70192 /* DAXKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75EB5D802E53E16D00B70192 /* DAXKit.xcframework */; };
-		75EB5D822E53E16D00B70192 /* DAXKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75EB5D802E53E16D00B70192 /* DAXKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AB2643906000000000000001 /* ExampleRecordingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2643906000000000000002 /* ExampleRecordingTests.swift */; };
+		AB2643906000000000000011 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB2643906000000000000012 /* Security.framework */; };
+		DFE4929E2C5003070091E814 /* DragonCopilotAmbient in Frameworks */ = {isa = PBXBuildFile; productRef = DFE4929D2C5003070091E814 /* DragonCopilotAmbient */; };
 		DFFBC0162BF6861200304233 /* Example-RecordingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFBC0152BF6861200304233 /* Example-RecordingApp.swift */; };
 		DFFBC0182BF6861200304233 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFBC0172BF6861200304233 /* ContentView.swift */; };
 		DFFBC01A2BF6861300304233 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFFBC0192BF6861300304233 /* Assets.xcassets */; };
 		DFFBC01E2BF6861300304233 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFFBC01D2BF6861300304233 /* Preview Assets.xcassets */; };
 		DFFBC02A2BF68AE200304233 /* AccessTokenProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFBC0292BF68AE200304233 /* AccessTokenProvider.swift */; };
-		DFFBC02C2BF68DEC00304233 /* AppMetadataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFBC02B2BF68DEC00304233 /* AppMetadataProvider.swift */; };
-		DFFBC02F2BF6991000304233 /* JWTDecode in Frameworks */ = {isa = PBXBuildFile; productRef = DFFBC02E2BF6991000304233 /* JWTDecode */; };
 		DFFBC0312BF7A57200304233 /* RecordingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFBC0302BF7A57200304233 /* RecordingViewModel.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		DFFBC0282BF6863B00304233 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				75EB5D822E53E16D00B70192 /* DAXKit.xcframework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
+/* Begin PBXContainerItemProxy section */
+		AB2643906000000000000009 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DFFBC00A2BF6861200304233 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DFFBC0112BF6861200304233;
+			remoteInfo = "Example-Recording";
 		};
-/* End PBXCopyFilesBuildPhase section */
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		75EB5D802E53E16D00B70192 /* DAXKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = DAXKit.xcframework; path = ../DAXKit.xcframework; sourceTree = "<group>"; };
+		AB2643906000000000000002 /* ExampleRecordingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleRecordingTests.swift; sourceTree = "<group>"; };
+		AB2643906000000000000003 /* Example-RecordingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Example-RecordingTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB2643906000000000000012 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		DFB487C82C090FF1002804AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		DFE4929C2C5002F40091E814 /* daxkit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = daxkit; path = ../../daxkit; sourceTree = "<group>"; };
 		DFFBC0122BF6861200304233 /* Example-Recording.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Example-Recording.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFFBC0152BF6861200304233 /* Example-RecordingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Example-RecordingApp.swift"; sourceTree = "<group>"; };
 		DFFBC0172BF6861200304233 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,17 +40,23 @@
 		DFFBC01B2BF6861300304233 /* Example-Recording.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Example-Recording.entitlements"; sourceTree = "<group>"; };
 		DFFBC01D2BF6861300304233 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DFFBC0292BF68AE200304233 /* AccessTokenProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenProvider.swift; sourceTree = "<group>"; };
-		DFFBC02B2BF68DEC00304233 /* AppMetadataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMetadataProvider.swift; sourceTree = "<group>"; };
 		DFFBC0302BF7A57200304233 /* RecordingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		AB2643906000000000000004 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DFFBC00F2BF6861200304233 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75EB5D812E53E16D00B70192 /* DAXKit.xcframework in Frameworks */,
-				DFFBC02F2BF6991000304233 /* JWTDecode in Frameworks */,
+				AB2643906000000000000011 /* Security.framework in Frameworks */,
+				DFE4929E2C5003070091E814 /* DragonCopilotAmbient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,15 +67,25 @@
 			isa = PBXGroup;
 			children = (
 				DFFBC0142BF6861200304233 /* Example-Recording */,
+				AB2643906000000000000007 /* Example-RecordingTests */,
+				AB2643906000000000000013 /* Frameworks */,
 				DFFBC0132BF6861200304233 /* Products */,
-				DFFBC0242BF6863B00304233 /* Frameworks */,
 			);
+			sourceTree = "<group>";
+		};
+		AB2643906000000000000013 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB2643906000000000000012 /* Security.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		DFFBC0132BF6861200304233 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				DFFBC0122BF6861200304233 /* Example-Recording.app */,
+				AB2643906000000000000003 /* Example-RecordingTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,13 +97,20 @@
 				DFFBC0152BF6861200304233 /* Example-RecordingApp.swift */,
 				DFFBC0302BF7A57200304233 /* RecordingViewModel.swift */,
 				DFFBC0172BF6861200304233 /* ContentView.swift */,
-				DFFBC02B2BF68DEC00304233 /* AppMetadataProvider.swift */,
 				DFFBC0292BF68AE200304233 /* AccessTokenProvider.swift */,
 				DFFBC0192BF6861300304233 /* Assets.xcassets */,
 				DFFBC01B2BF6861300304233 /* Example-Recording.entitlements */,
 				DFFBC01C2BF6861300304233 /* Preview Content */,
 			);
 			path = "Example-Recording";
+			sourceTree = "<group>";
+		};
+		AB2643906000000000000007 /* Example-RecordingTests */ = {
+			isa = PBXGroup;
+			children = (
+				AB2643906000000000000002 /* ExampleRecordingTests.swift */,
+			);
+			path = "Example-RecordingTests";
 			sourceTree = "<group>";
 		};
 		DFFBC01C2BF6861300304233 /* Preview Content */ = {
@@ -102,18 +121,29 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		DFFBC0242BF6863B00304233 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				75EB5D802E53E16D00B70192 /* DAXKit.xcframework */,
-				DFE4929C2C5002F40091E814 /* daxkit */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		AB2643906000000000000008 /* Example-RecordingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB264390600000000000000B /* Build configuration list for PBXNativeTarget "Example-RecordingTests" */;
+			buildPhases = (
+				AB2643906000000000000005 /* Sources */,
+				AB2643906000000000000004 /* Frameworks */,
+				AB2643906000000000000006 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AB264390600000000000000A /* PBXTargetDependency */,
+			);
+			name = "Example-RecordingTests";
+			packageProductDependencies = (
+			);
+			productName = "Example-RecordingTests";
+			productReference = AB2643906000000000000003 /* Example-RecordingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		DFFBC0112BF6861200304233 /* Example-Recording */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DFFBC0212BF6861300304233 /* Build configuration list for PBXNativeTarget "Example-Recording" */;
@@ -121,7 +151,6 @@
 				DFFBC00E2BF6861200304233 /* Sources */,
 				DFFBC00F2BF6861200304233 /* Frameworks */,
 				DFFBC0102BF6861200304233 /* Resources */,
-				DFFBC0282BF6863B00304233 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,7 +158,7 @@
 			);
 			name = "Example-Recording";
 			packageProductDependencies = (
-				DFFBC02E2BF6991000304233 /* JWTDecode */,
+				DFE4929D2C5003070091E814 /* DragonCopilotAmbient */,
 			);
 			productName = "Example-Recording";
 			productReference = DFFBC0122BF6861200304233 /* Example-Recording.app */;
@@ -145,6 +174,10 @@
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
+					AB2643906000000000000008 = {
+						CreatedOnToolsVersion = 26.0;
+						TestTargetID = DFFBC0112BF6861200304233;
+					};
 					DFFBC0112BF6861200304233 = {
 						CreatedOnToolsVersion = 15.4;
 					};
@@ -160,18 +193,26 @@
 			);
 			mainGroup = DFFBC0092BF6861200304233;
 			packageReferences = (
-				DFFBC02D2BF6991000304233 /* XCRemoteSwiftPackageReference "JWTDecode" */,
+				DFE4929C2C5002F40091E814 /* XCRemoteSwiftPackageReference "DAXKit-SDK-iOS" */,
 			);
 			productRefGroup = DFFBC0132BF6861200304233 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				DFFBC0112BF6861200304233 /* Example-Recording */,
+				AB2643906000000000000008 /* Example-RecordingTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		AB2643906000000000000006 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DFFBC0102BF6861200304233 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -184,12 +225,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		AB2643906000000000000005 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB2643906000000000000001 /* ExampleRecordingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DFFBC00E2BF6861200304233 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				DFFBC02A2BF68AE200304233 /* AccessTokenProvider.swift in Sources */,
-				DFFBC02C2BF68DEC00304233 /* AppMetadataProvider.swift in Sources */,
 				DFFBC0312BF7A57200304233 /* RecordingViewModel.swift in Sources */,
 				DFFBC0182BF6861200304233 /* ContentView.swift in Sources */,
 				DFFBC0162BF6861200304233 /* Example-RecordingApp.swift in Sources */,
@@ -199,6 +247,38 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		AB264390600000000000000C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nuance.daxkit.Example-RecordingTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example-Recording.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Example-Recording";
+			};
+			name = Debug;
+		};
+		AB264390600000000000000D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nuance.daxkit.Example-RecordingTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example-Recording.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Example-Recording";
+			};
+			name = Release;
+		};
 		DFFBC01F2BF6861300304233 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -322,7 +402,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Example-Recording/Preview Content\"";
-				DEVELOPMENT_TEAM = CZ53Q653EJ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -362,7 +441,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Example-Recording/Preview Content\"";
-				DEVELOPMENT_TEAM = CZ53Q653EJ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -396,6 +474,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		AB264390600000000000000B /* Build configuration list for PBXNativeTarget "Example-RecordingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB264390600000000000000C /* Debug */,
+				AB264390600000000000000D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		DFFBC00D2BF6861200304233 /* Build configuration list for PBXProject "Example-Recording" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -416,22 +503,30 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin PBXTargetDependency section */
+		AB264390600000000000000A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DFFBC0112BF6861200304233 /* Example-Recording */;
+			targetProxy = AB2643906000000000000009 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCRemoteSwiftPackageReference section */
-		DFFBC02D2BF6991000304233 /* XCRemoteSwiftPackageReference "JWTDecode" */ = {
+		DFE4929C2C5002F40091E814 /* XCRemoteSwiftPackageReference "DAXKit-SDK-iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/auth0/JWTDecode.swift";
+			repositoryURL = "https://github.com/microsoftconnect/DAXKit-SDK-iOS";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
+				kind = exactVersion;
+				version = 3.0.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		DFFBC02E2BF6991000304233 /* JWTDecode */ = {
+		DFE4929D2C5003070091E814 /* DragonCopilotAmbient */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DFFBC02D2BF6991000304233 /* XCRemoteSwiftPackageReference "JWTDecode" */;
-			productName = JWTDecode;
+			package = DFE4929C2C5002F40091E814 /* XCRemoteSwiftPackageReference "DAXKit-SDK-iOS" */;
+			productName = DragonCopilotAmbient;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
